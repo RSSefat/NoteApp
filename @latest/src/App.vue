@@ -65,10 +65,10 @@
           <h3>{{note.Title}}</h3>
           <p class="main-text"> {{note.text}}</p>
       
-          <div  class="cardBtn" :class="{cardButton: note.cardBtn}" v-show="note.showIcon">
+          <div  class="cardBtn" :class="{cardButton: note.cardBtn}">
          
             <span class="date">{{note.date.toLocaleDateString("en-US")}}</span>
-          <div >
+          <div  v-show="note.showIcon">
             <button @click="deleteNote(index)">
               <font-awesome-icon icon="fa-solid fa-trash-can" />
             </button>
@@ -140,7 +140,9 @@
   .card h3{
     margin-bottom: -48px;
   }
- 
+  .main-text{
+    
+  }
   .cards-container{
     display: flex;
     flex-wrap: wrap;
@@ -206,6 +208,7 @@
   .cardBtn,   .cardButton{
     display: flex;
     justify-content: space-between;
+
     
     
   
